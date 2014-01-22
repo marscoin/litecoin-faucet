@@ -1,9 +1,10 @@
-litecoin faucet public release
+Marscoin faucet public release
 ------------------------------------------
-Forum Thread: http://forum.litecoin.net/index.php/topic,533.0.html
+Forum Thread: http://mars-project.org/index.php?topic=9.0 
 this is the simplest version of it, other might get released in time
 
 made by Greedi 2012 (c)
+updated for Marscoin 2014
 
 
 INSTALL:
@@ -17,5 +18,6 @@ account have to be FaucetDonations and/or SendOut
 
 
 Donate: 
+MRS: MTZa2XJFDKLtgk49iiWBE8FDC6LSvgQbqt
 LTC: Lh4c3cYcmvoksUNJLFT2Z5zsUmKUFgAUF5
 BTC: 1MFH5dY85Ve4Q6KYPGJnfPmiHP2UxmXend
