@@ -33,16 +33,16 @@ function ordinal($a)
 }
 if (strtolower(ValidateCaptcha($adscaptchaID, $adsprivkey, $challengeValue, $responseValue,
     $remoteAddress)) == "true") {
-    $isvalid = $btclient->validateaddress($_POST['LTC']);
+    $isvalid = $btclient->validateaddress($_POST['MRC']);
     if ($isvalid['isvalid'] != '1') {
 
-        echo "Invalid Address: {$_POST['LTC']}";
+        echo "Invalid Address: {$_POST['MRC']}";
         echo "</center></div>";
         include ('templates/sidebar.php');
         include ('templates/footer.php');
         die();
     } else {
-    $ltcaddress = $_POST['LTC'];
+    $ltcaddress = $_POST['MRC'];
             mysql_query("INSERT INTO dailyltc (ltcaddress, ip)
     SELECT * FROM (SELECT '$ltcaddress', '$ip') AS tmp
     WHERE NOT EXISTS (
@@ -54,17 +54,19 @@ if (strtolower(ValidateCaptcha($adscaptchaID, $adsprivkey, $challengeValue, $res
             $command = "SELECT * FROM dailyltc";
             $q = mysql_query($command);
             $rows = mysql_num_rows($q);
-            $entries_needed = 150;
-            if ($rows > $entries_needed) {
+            $entries_needed = 10;
+            if ($rows >= $entries_needed) {
                 $command = "SELECT * FROM roundltc";
                 $q = mysql_query($command);
                 $res = mysql_fetch_array($q);
                 $list = mysql_query("SELECT * FROM dailyltc");
 
-                $coins_in_account = $btclient->getbalance("SendOut", 0);
-                if ($coins_in_account >= ($res['roundltc'] * $rows)) {
+                $coins_in_account = $btclient->getbalance($don_faucet, 0);
+                //echo $coins_in_account . " " . $res['roundltc'] * $rows;
+		if ($coins_in_account >= ($res['roundltc'] * $rows)) {
                     while ($listw = mysql_fetch_array($list)) {
-                        $btclient->sendfrom("SendOut", $listw['btcaddres'], $res['roundltc']);
+			echo $listw['ltcaddress'];
+                        $btclient->sendfrom($don_faucet, $listw['ltcaddress'], $res['roundltc']);
                     }
                     $n = ordinal(mysql_num_rows($list));
                     echo srsnot("Congratulations, you were the {$n} in the round, the round has been reset and payouts have been sent.");
@@ -89,7 +91,7 @@ if (strtolower(ValidateCaptcha($adscaptchaID, $adsprivkey, $challengeValue, $res
 
             //echo "printed.";
             // echo "</table>";
-            echo "You will get your LTC at the end of this round<br />There are $rows submitted addresses in this round!<br>";
+            echo "You will get your MRC at the end of this round<br />There are $rows submitted addresses in this round!<br>";
             echo "<br>If you want to donate to the Faucet: $donaddress (recv: $don)";
         }
     

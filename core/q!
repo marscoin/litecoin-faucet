@@ -1,10 +1,10 @@
 <?
 // Donation account
-$don_faucet = "MTNaT9w6Gdo2WaoDQgbd5oHnA7gU83586A";
+$don_faucet = "FaucetDonations";
 
 // RPC Settings
-$btclogin = array("username" => "marscoinrpc", "password" => "9onttdjt2t5dk5a2HASsjMp9mYwMrPvYY9nxd3WVvmxE",
-    "host" => "localhost", "port" => "19234");
+$btclogin = array("username" => "username", "password" => "pass",
+    "host" => "localhost", "port" => "9332");
 
 // DB Settings
 $sqlogin = array("host" => "localhost", "dbname" => "faucet", "username" =>

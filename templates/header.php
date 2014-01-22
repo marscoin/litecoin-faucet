@@ -6,8 +6,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Litecoin Faucet</title>
-    <meta name="description" content="Litecoin Faucet">
+    <title>Marscoin Giveaway</title>
+    <meta name="description" content="Marscoin Faucet">
     <meta name="Greedi" content="LTC">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -26,6 +26,9 @@
         background-color: #eee;
       }
       body {
+background-image: url('images/back3.png');
+background-size: cover;
+height: 1000px;
         padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
       }
       .container > footer p {
@@ -80,12 +83,12 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="/"><font style="font-size: 20px;">Faucet</font><font style="font-size: 9px; "></font> </a>
+          <a class="brand" href="/"><font style="font-size: 20px;">Marscoin Giveaway</font><font style="font-size: 9px; "></font> </a>
           <ul class="nav">
           <?
 // menu
  mnu_btn("index.php", "Daily");
-if ($_SERVER['REMOTE_ADDR'] == "127.0.0.1")
+if ($_SERVER['REMOTE_ADDR'] == "72.91.137.189")
     mnu_btn("server.php", "Server");
 
 
@@ -113,5 +116,5 @@ function mnu_btn($link, $title, $preg = false)
       </div>
     </div>
     <div class="container">
-      <div class="content">
+      <div class="content" style="margin-top:50px;">
       <!-- END HEADER.PHP -->

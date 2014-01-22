@@ -6,14 +6,14 @@ echo '
             <h3><center>Faucet statistics</center></h3>
             <table class=\'zebra-striped\'>
                         <tr><td>Submitted This Round: </td><td>' . $rows2 . '</td></tr>
-<tr><td>Current Payout: </td><td>' . $roundltc . ' LTC</td></tr> 
-<tr><td>Current Round: </td><td>' . $round . ' LTC</td></tr>
-            <tr><td>Total Payout: </td><td>' . $dailytotal . ' LTC</td></tr>
+<tr><td>Current Payout: </td><td>' . $roundltc . ' MRS</td></tr> 
+<tr><td>Current Round: </td><td>' . $round . '. round </td></tr>
+            <tr><td>Total Payout: </td><td>' . $dailytotal . ' MRS</td></tr>
 </table>';
 ?>
 
 <center>
-<p>Put your own stuff here.</p>
+<p></p>
 
 <br>
 </a>

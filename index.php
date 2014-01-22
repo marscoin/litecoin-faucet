@@ -13,7 +13,7 @@ include ('templates/header.php');
         <div class="row">
           <div class="span10">
 <?
-echo '<h4><center>Payout will happen when there are atleast <strong>**</strong> submitted!<br></h4>
+echo '<h4><center>Payout will happen when there are at least <strong>10</strong> submissions!<br></h4>
 You can only enter once per round, if we detect the same IP or a proxy, you\'ll not be paid.';
 ?>
          
@@ -22,8 +22,8 @@ You can only enter once per round, if we detect the same IP or a proxy, you\'ll 
 </style>
 <center><br>
 <form action="submitted.php" method="post">
-<td class="tdr"><font color="green">Your Litecoin Address Here:</font></td>
-<td><input type="text" name="LTC"></td>
+<td class="tdr"><font color="green">Your Marscoin Address Here:</font></td>
+<td><input type="text" name="MRC"><p>Don't have a Marscoin address yet? Get one for <a href="http://marsaddress.org">free here</a></p></td>
 <?php
 echo GetCaptcha($adscaptchaID, $adspubkey);
 ?>
